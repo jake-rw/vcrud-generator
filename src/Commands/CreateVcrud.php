@@ -171,25 +171,17 @@ class CreateVcrud extends Command
 
     protected function getContent($file)
     {
+        if (empty($file)) {
+            $file = 'blank';
+        }
+
         $content = '';
-        $template = file_get_contents(__DIR__.'/../../Templates/Backend/blank.php');
-
        
-        if ( $file == 'list' ) {
-            $template = file_get_contents(__DIR__.'/../../Templates/Backend/list.php');            
-            //dd($content);
-        }
-
-        if ( $file == 'edit' ) {
-            $template = file_get_contents(__DIR__.'/../../Templates/Backend/edit.php');
-        }
-
-        if ( $file == 'create' ) {
-            $template = file_get_contents(__DIR__.'/../../Templates/Backend/create.php');
-        }
+        $template = file_get_contents(__DIR__."/../../Templates/Backend/{$file}.php");
 
         $_content = preg_replace('/\{\{([\s]?\$model)[\s]?\}\}/', $this->_getModel(), $template);
         $content .= preg_replace('/\{\{([\s]?\$route)[\s]?\}\}/', $this->getModelDir(), $_content);
+
         // if (! empty($this->option('section'))) {
         //     $template = file_get_contents(__DIR__.'/../Templates/section.php');
         //     collect($this->option('section'))->each(function ($value, $key) use ($template, &$content) {

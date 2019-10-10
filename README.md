@@ -1,4 +1,4 @@
-# Very short description of the package
+# VCrud Generator
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jakerw/vcrud-generator.svg?style=flat-square)](https://packagist.org/packages/jakerw/vcrud-generator)
 [![Build Status](https://img.shields.io/travis/jakerw/vcrud-generator/master.svg?style=flat-square)](https://travis-ci.org/jakerw/vcrud-generator)
