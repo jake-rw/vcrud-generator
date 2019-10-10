@@ -66,6 +66,9 @@ class CreateVcrud extends Command
         //Create folders and blades
         $this->createViews();
 
+        //Create route
+        $this->createRoute();
+
     }
 
     /**
@@ -188,5 +191,12 @@ class CreateVcrud extends Command
         $content .= preg_replace('/\{\{([\s]?\$route)[\s]?\}\}/', $this->getModelDir(), $_content);
         
         return $content;
+    }
+
+    protected function createRoute()
+    {
+        $name = $this->getModelDir();
+        $controller = $this->getController()."Controller.php";
+        $this->info("Create route with the following Route::resource($name, $controller)" );
     }
 }

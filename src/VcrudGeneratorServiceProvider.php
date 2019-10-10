@@ -21,7 +21,7 @@ class VcrudGeneratorServiceProvider extends ServiceProvider
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
        
-        //dd(Helper::loadRoutes(__DIR__.'/../routes'));
+       
        
         if ($this->app->runningInConsole()) {
             $this->publishes([
