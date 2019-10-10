@@ -57,10 +57,10 @@ class CreateVcrud extends Command
         
         $this->viewsDir = getcwd().'/resources/views/backend/' . $this->getModelDir();
         //Create model and migration
-       // $this->createModel();
+        $this->createModel();
         
         //Create controller
-        //$this->createController();
+        $this->createController();
 
         //Create folders and blades
         $this->createViews();
@@ -134,10 +134,7 @@ class CreateVcrud extends Command
     {
         $this->createDirectory($this->viewsDir);
         $this->createView($this->viewBlades);
-        //$this->getPath();
     }
-
-   
 
     protected function createDirectory($baseDir)
     {
@@ -153,7 +150,6 @@ class CreateVcrud extends Command
                 $this->createFile($view);
             }
         }
-        //dd($views);
     }
 
     protected function createFile($file)
@@ -161,22 +157,22 @@ class CreateVcrud extends Command
         $fullPath = $this->viewsDir . '/' . $file . '.blade.php';
 
         if (file_exists($fullPath)) {
-            $this->warn('File already exists.');
-            //return false;
+            $this->error('File already exists: ' . $fullPath);
+            return false;
         }
+
         file_put_contents($fullPath, $this->getContent($file));
-        $this->info('File created: '.$fullPath);
+
+        $this->info('File created: ' . $fullPath);
     }
 
     protected function getContent($file)
     {
         $content = '';
         $template = file_get_contents(__DIR__.'/../Templates/Backend/blank.php');
-
        
         if ( $file == 'list' ) {
-            $template = file_get_contents(__DIR__.'/../Templates/Backend/list.php');            
-            //dd($content);
+            $template = file_get_contents(__DIR__.'/../Templates/Backend/list.php'); 
         }
 
         if ( $file == 'edit' ) {
@@ -189,12 +185,7 @@ class CreateVcrud extends Command
 
         $_content = preg_replace('/\{\{([\s]?\$model)[\s]?\}\}/', $this->_getModel(), $template);
         $content .= preg_replace('/\{\{([\s]?\$route)[\s]?\}\}/', $this->getModelDir(), $_content);
-        // if (! empty($this->option('section'))) {
-        //     $template = file_get_contents(__DIR__.'/../Templates/section.php');
-        //     collect($this->option('section'))->each(function ($value, $key) use ($template, &$content) {
-        //         $content .= preg_replace('/\{\{([\s]?\$section)[\s]?\}\}/', $value, $template);
-        //     });
-        // }
+        
         return $content;
     }
 }
