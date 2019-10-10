@@ -40,7 +40,9 @@ class VcrudGeneratorServiceProvider extends ServiceProvider
             ], 'lang');*/
 
             // Registering package commands.
-            // $this->commands([]);
+            $this->commands([
+                CreateVcrud::class,
+            ]);
         }
     }
 
