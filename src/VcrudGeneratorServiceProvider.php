@@ -3,6 +3,7 @@
 namespace Jakerw\VcrudGenerator;
 
 use Illuminate\Support\ServiceProvider;
+use Jakerw\VcrudGenerator\Commands\CreateVcrud;
 
 class VcrudGeneratorServiceProvider extends ServiceProvider
 {
