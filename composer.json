@@ -1,0 +1,54 @@
+{
+    "name": "jakerw/vcrud-generator",
+    "description": "And View and CRUD generator",
+    "keywords": [
+        "jake-rw",
+        "vcrud-generator"
+    ],
+    "homepage": "https://github.com/jake-rw/vcrud-generator",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Jake Rudkin-Wilson",
+            "email": "me@jakerw.co.uk",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.8.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jakerw\\VcrudGenerator\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jakerw\\VcrudGenerator\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jakerw\\VcrudGenerator\\VcrudGeneratorServiceProvider"
+            ],
+            "aliases": {
+                "VcrudGenerator": "Jakerw\\VcrudGenerator\\VcrudGeneratorFacade"
+            }
+        }
+    }
+}
