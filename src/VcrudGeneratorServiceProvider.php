@@ -3,7 +3,7 @@
 namespace Jakerw\VcrudGenerator;
 
 use Illuminate\Support\ServiceProvider;
-use Commands\CreateVcrud;
+use Jakerw\VcrudGenerator\Commands\CreateVcrud;
 
 class VcrudGeneratorServiceProvider extends ServiceProvider
 {
@@ -41,12 +41,9 @@ class VcrudGeneratorServiceProvider extends ServiceProvider
             ], 'lang');*/
 
             // Registering package commands.
-            if ($this->app->runningInConsole()) {
-                $this->commands([
-                    CreateVcrud::class,
-                ]);
-            }
-            
+            $this->commands([
+                CreateVcrud::class,
+            ]);
         }
     }
 
