@@ -4,6 +4,7 @@ namespace Jakerw\VcrudGenerator;
 
 use Illuminate\Support\ServiceProvider;
 use Jakerw\VcrudGenerator\Commands\CreateVcrud;
+use Jakerw\VcrudGenerator\Helpers\Helper;
 
 class VcrudGeneratorServiceProvider extends ServiceProvider
 {
@@ -19,7 +20,9 @@ class VcrudGeneratorServiceProvider extends ServiceProvider
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'vcrud-generator');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
-
+       
+        dd(Helper::loadRoutes(__DIR__.'/../routes'));
+       
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('vcrud-generator.php'),

@@ -4,6 +4,7 @@ namespace Jakerw\VcrudGenerator\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 
+
 class CreateVcrud extends Command
 {
     /**
