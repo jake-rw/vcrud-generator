@@ -1,7 +1,6 @@
 <?php
 
-namespace Jakerw\VcrudGenerator\Commands\;
-
+namespace Jakerw\VcrudGenerator\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 
