@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Jakerw\VcrudGenerator\Commands\;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
@@ -172,20 +172,20 @@ class CreateVcrud extends Command
     protected function getContent($file)
     {
         $content = '';
-        $template = file_get_contents(__DIR__.'/../../Templates/Backend/blank.php');
+        $template = file_get_contents(__DIR__.'/../Templates/Backend/blank.php');
 
        
         if ( $file == 'list' ) {
-            $template = file_get_contents(__DIR__.'/../../Templates/Backend/list.php');            
+            $template = file_get_contents(__DIR__.'/../Templates/Backend/list.php');            
             //dd($content);
         }
 
         if ( $file == 'edit' ) {
-            $template = file_get_contents(__DIR__.'/../../Templates/Backend/edit.php');
+            $template = file_get_contents(__DIR__.'/../Templates/Backend/edit.php');
         }
 
         if ( $file == 'create' ) {
-            $template = file_get_contents(__DIR__.'/../../Templates/Backend/create.php');
+            $template = file_get_contents(__DIR__.'/../Templates/Backend/create.php');
         }
 
         $_content = preg_replace('/\{\{([\s]?\$model)[\s]?\}\}/', $this->_getModel(), $template);
