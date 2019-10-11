@@ -18,7 +18,12 @@ composer require jakerw/vcrud-generator
 ## Usage
 
 ``` php
-// Usage description here
+Creating a view is as simple as running:
+Running the below will works all sorts of magic. In the background it will be creating a Model, Migration, Backend Controller, Backend views based on AdminLTE.
+
+You simply pass the Model name as an argument.
+
+php artisan make:vrud Phone
 ```
 
 ### Testing
