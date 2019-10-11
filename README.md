@@ -17,42 +17,24 @@ composer require jakerw/vcrud-generator
 
 ## Usage
 
+Running the below will work all sorts of magic. In the background it will be creating the following:
+- Model
+- Migration 
+- Backend Controller 
+- Backend views based on AdminLTE
+
+You simply need to pass the Model name as an argument.
+
 ``` php
-Creating a view is as simple as running:
-Running the below will works all sorts of magic. In the background it will be creating a Model, Migration, Backend Controller, Backend views based on AdminLTE.
-
-You simply pass the Model name as an argument.
-
 php artisan make:vrud Phone
 ```
 
-### Testing
-
-``` bash
-composer test
-```
-
-### Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-### Security
-
-If you discover any security related issues, please email me@jakerw.co.uk instead of using the issue tracker.
-
 ## Credits
 
-- [Jake Rudkin-Wilson](https://github.com/jakerw)
+- [Jake Rudkin-Wilson](https://github.com/jake-rw)
 - [All Contributors](../../contributors)
 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
