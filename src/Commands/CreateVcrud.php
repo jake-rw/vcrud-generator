@@ -55,13 +55,16 @@ class CreateVcrud extends Command
      */
     public function handle()
     {
-        
+       
         $this->viewsDir = getcwd().'/resources/views/backend/' . $this->getModelDir();
         //Create model and migration
         $this->createModel();
         
         //Create controller
         $this->createController();
+
+        //Create route
+        $this->createRequests();
 
         //Create folders and blades
         $this->createViews();
@@ -132,6 +135,25 @@ class CreateVcrud extends Command
             'name' => $this->getController()."Controller",
             '--model' => $this->getModel(),
         ]);
+    }
+
+    protected function createRequests()
+    {
+        //make:request
+        //Admin/[]/Add[]
+        //Admin/[]/Edit[]
+        
+        $requests = array(
+            'Add',
+            'Edit'
+        );
+
+        foreach ($requests as $request) {
+             $this->call('make:request', [
+                'name' => 'Admin/'.$request.$this->_getModel(),
+            ]);
+        }
+       
     }
 
     protected function createViews()
