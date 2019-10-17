@@ -20,7 +20,7 @@ composer require jakerw/vcrud-generator
 Running the below will work all sorts of magic. In the background it will be creating the following:
 - Model
 - Migration 
-- Backend Controller 
+- Backend Controller
 - Backend Requests 
 - Backend views based on AdminLTE
 
