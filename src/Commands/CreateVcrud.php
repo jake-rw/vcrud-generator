@@ -197,9 +197,11 @@ class CreateVcrud extends Command
         if (empty($file)) {
             $file = 'blank';
         }
+        
         $content = '';
        
         $template = file_get_contents(__DIR__."/../../Templates/Backend/{$file}.php");
+
         $_content = preg_replace('/\{\{([\s]?\$model)[\s]?\}\}/', $this->_getModel(), $template);
         $content .= preg_replace('/\{\{([\s]?\$route)[\s]?\}\}/', $this->getModelDir(), $_content);
         return $content;
