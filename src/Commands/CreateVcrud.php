@@ -195,13 +195,14 @@ class CreateVcrud extends Command
             $file = 'blank';
         }
 
-        $content = '';
-        $_route = $this->getModelDir().'s';
-       
-        $template = file_get_contents(__DIR__."/../../Templates/Backend/{$file}.php");
+        $content = '';       
+
+        $template = file_get_contents(__DIR__."/../Templates/Backend/{$file}.php");
 
         $_content = preg_replace('/\{\{([\s]?\$model)[\s]?\}\}/', $this->_getModel(), $template);
-        $content .= preg_replace('/\{\{([\s]?\$route)[\s]?\}\}/', $_route, $_content);
+        $__content = preg_replace('/\{\{([\s]?\$route)[\s]?\}\}/', $this->getModelDir(), $_content);
+        $content .= preg_replace('/\{\{([\s]?\$routes)[\s]?\}\}/', Str::plural($this->getModelDir()), $__content);
+
         return $content;
     }
 
