@@ -5,7 +5,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/jakerw/vcrud-generator.svg?style=flat-square)](https://scrutinizer-ci.com/g/jakerw/vcrud-generator)
 [![Total Downloads](https://img.shields.io/packagist/dt/jakerw/vcrud-generator.svg?style=flat-square)](https://packagist.org/packages/jakerw/vcrud-generator)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+The package is a Utility tool briging together a number of Laravels console commands such as make:model nake:controller and adding view creation so save the manual leg work.
 
 ## Installation
 
@@ -17,37 +17,25 @@ composer require jakerw/vcrud-generator
 
 ## Usage
 
+Running the below will work all sorts of magic. In the background it will be creating the following:
+- Model
+- Migration 
+- Backend Controller
+- Backend Requests 
+- Backend views based on AdminLTE
+
+You simply need to pass the Model name as an argument.
+
 ``` php
-// Usage description here
+php artisan make:vrud Phone
 ```
-
-### Testing
-
-``` bash
-composer test
-```
-
-### Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-### Security
-
-If you discover any security related issues, please email me@jakerw.co.uk instead of using the issue tracker.
 
 ## Credits
 
-- [Jake Rudkin-Wilson](https://github.com/jakerw)
+- [Jake Rudkin-Wilson](https://github.com/jake-rw)
 - [All Contributors](../../contributors)
 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
