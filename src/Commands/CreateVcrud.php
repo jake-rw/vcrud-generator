@@ -139,9 +139,6 @@ class CreateVcrud extends Command
 
     protected function createRequests()
     {
-        //make:request
-        //Admin/[]/Add[]
-        //Admin/[]/Edit[]
         
         $requests = array(
             'Add',
@@ -150,7 +147,7 @@ class CreateVcrud extends Command
 
         foreach ($requests as $request) {
              $this->call('make:request', [
-                'name' => 'Admin/'.$request.$this->_getModel(),
+                'name' => 'Admin/' . $this->_getModel() . '/' . $request.$this->_getModel(),
             ]);
         }
        
@@ -197,20 +194,21 @@ class CreateVcrud extends Command
         if (empty($file)) {
             $file = 'blank';
         }
-        
+
         $content = '';
+        $_route = $this->getModelDir().'s';
        
         $template = file_get_contents(__DIR__."/../../Templates/Backend/{$file}.php");
 
         $_content = preg_replace('/\{\{([\s]?\$model)[\s]?\}\}/', $this->_getModel(), $template);
-        $content .= preg_replace('/\{\{([\s]?\$route)[\s]?\}\}/', $this->getModelDir(), $_content);
+        $content .= preg_replace('/\{\{([\s]?\$route)[\s]?\}\}/', $_route, $_content);
         return $content;
     }
 
     protected function createRoute()
     {
         $name = $this->getModelDir();
-        $controller = $this->getController()."Controller.php";
+        $controller = $this->getController()."Controller";
         $this->info("Create route with the following Route::resource('$name', '$controller');" );
     }
 }

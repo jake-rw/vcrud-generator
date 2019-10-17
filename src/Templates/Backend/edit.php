@@ -19,8 +19,10 @@
             {{ csrf_field() }}
             <div class="col-md-6">
                 <div class="box box-default">
-                    <div class="box-body">
-                       
+                    <div class="box-header with-border">
+                      <h3 class="box-title">Details</h3>
+                    </div> 
+                    <div class="box-body">                       
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name">First Name</label>
                             <input type="text" class="form-control" name="name" id="name" value="{{  $post->name }}">
@@ -34,16 +36,16 @@
             </div>
 
             <div class="col-md-6">
-                <div class="box box-default">
+                <div class="box box-default">   
                     <div class="box-header with-border">
-                      <h3 class="box-title">Requirements</h3>
+                      <h3 class="box-title">Status</h3>
+                    </div>                 
+                    <div class="box-body"> 
+                        <a href="{{ URL::previous() }}" class="btn btn-default">Cancel</a>
+                        <button type="submit" class="btn btn-primary pull-right">Save</button>     
                     </div>
-                    <div class="box-body">
-                        
-                    </div>  
                 </div>
             </div>
-
             
         </form>
     </div>

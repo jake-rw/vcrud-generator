@@ -19,6 +19,9 @@
 
             <div class="col-md-6">
                 <div class="box box-default">
+                    <div class="box-header with-border">
+                      <h3 class="box-title">Details</h3>
+                    </div>  
                     <div class="box-body">
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name">Name</label>
@@ -31,13 +34,14 @@
                 </div>
             </div>
 
-           <div class="col-md-6">
-                <div class="box box-default">
+            <div class="col-md-6">
+                <div class="box box-default">   
                     <div class="box-header with-border">
-                      <h3 class="box-title">Requirements</h3>
-                    </div>
-
-                    <div class="box-body">
+                      <h3 class="box-title">Status</h3>
+                    </div>                 
+                    <div class="box-body"> 
+                        <a href="{{ URL::previous() }}" class="btn btn-default">Cancel</a>
+                        <button type="submit" class="btn btn-primary pull-right">Save</button>     
                     </div>
                 </div>
             </div>

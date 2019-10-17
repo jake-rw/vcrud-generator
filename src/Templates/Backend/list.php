@@ -45,7 +45,7 @@
           
             <div class="box">
                 <div class="box-body no-padding">
-                    <table id="posts" class="table table-hover">
+                    <table id="items" class="table table-hover">
                         <thead>
                             <tr>
                                 <th width="5">&nbsp;</th>
@@ -54,15 +54,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($posts as $post)
+                            @foreach($items as $item)
                                 <tr>
                                     <td width="5">&nbsp;</td>
-                                    <td>{{ $post->id }}</td>
+                                    <td>{{ $item->id }}</td>
                                                                        
                                     <td width="170">
                                         <ul class="list-unstyled list-inline">
-                                            <li><a class="btn btn-default btn-sm" href="{{ url('admin/{{ $route }}/edit/'.$post->id) }}"><i class="fa fa-pencil-alt"></i></a></li>
-                                            <li><a class="btn btn-default btn-sm delete-item" href="{{ url('admin/{{ $route }}/delete/'.$post->id) }}"><i class="fa fa-trash"></i></a></li>
+                                            <li><a class="btn btn-default btn-sm" href="{{ url('admin/{{ $route }}/'.$item->id.'/edit') }}"><i class="fa fa-pencil-alt"></i></a></li>
+                                            <li><a class="btn btn-default btn-sm delete-item" href="{{ url('admin/{{ $route }}/delete/'.$item->id) }}"><i class="fa fa-trash"></i></a></li>
                                         </ul>
                                     </td>
                                 </tr>
