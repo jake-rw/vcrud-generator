@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', {{ $model }})
+@section('title', "{ $model }")
 
 @push('css')
 <style>

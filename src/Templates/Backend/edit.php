@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Edit {{ $model }})
+@section('title', "Edit { $model }")
 
 
 @section('content')
