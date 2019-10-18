@@ -5,7 +5,7 @@
 
 @section('content')
     <div class="row">
-        <form name="db_form" role="form" action="{{ route('admin.edit{{ $model }}') }}" method="post" enctype="multipart/form-data">
+        <form name="db_form" role="form">
             <input type="hidden" name="bid" id="bid" value="{{ $item->id }}">
             @if(!empty($errors->all()))
                 <div class="col-lg-12">
@@ -25,22 +25,10 @@
                     <div class="box-body">                       
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name">First Name</label>
-                            <input type="text" class="form-control" name="name" id="name" value="{{  $item->name }}">
-                        </div> 
+                            <input type="text" class="form-control" name="name" id="name" value="{{  $item->name }}" disabled="">
+                        </div>      
                     </div>
                 </div>               
-            </div>
-
-            <div class="col-md-6">
-                <div class="box box-default">   
-                    <div class="box-header with-border">
-                      <h3 class="box-title">Status</h3>
-                    </div>                 
-                    <div class="box-body"> 
-                        <a href="{{ URL::previous() }}" class="btn btn-default">Cancel</a>
-                        <button type="submit" class="btn btn-primary pull-right">Save</button>     
-                    </div>
-                </div>
             </div>
             
         </form>
