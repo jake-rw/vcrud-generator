@@ -6,7 +6,7 @@
 @section('content')
     <div class="row">
         <form name="db_form" role="form" action="{{ route('admin.edit{{ $model }}') }}" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="bid" id="bid" value="{{ $post->id }}">
+            <input type="hidden" name="bid" id="bid" value="{{ $item->id }}">
             @if(!empty($errors->all()))
                 <div class="col-lg-12">
                     <div class="alert alert-danger">
@@ -25,7 +25,7 @@
                     <div class="box-body">                       
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name">First Name</label>
-                            <input type="text" class="form-control" name="name" id="name" value="{{  $post->name }}">
+                            <input type="text" class="form-control" name="name" id="name" value="{{  $item->name }}">
                         </div>    
 
                         <br>

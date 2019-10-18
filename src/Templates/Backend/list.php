@@ -26,9 +26,7 @@
             <div class="box box-success">
                 <div class="box-header with-border">
                     <h3>{{ $model }}s</h3>
-                    <a href="{{ url('admin/{{ $routes }}/export') }}" class="btn bg-light-blue">Export all {{ $model }}s</a>
-                    <a href="{{ url('admin/{{ $routes }}/create') }}" class="btn bg-green">Add new </a>
-                    
+                    <a href="{{ route('admin.{{ $routes }}.create') }}" class="btn bg-green">Add new </a>
                 </div>
             </div>
             @if (Session::has('error'))
@@ -61,9 +59,15 @@
                                                                        
                                     <td width="170">
                                         <ul class="list-unstyled list-inline">
-
                                             <li><a class="btn btn-default btn-sm" href="{{ route('admin.{{$routes}}.edit', ['{{$route}}' => $item->id]) }}"><i class="fa fa-pencil-alt"></i></a></li>
-                                            <li><a class="btn btn-default btn-sm delete-item" href="{{ url('admin/{{$routes}}/delete/'.$item->id) }}"><i class="fa fa-trash"></i></a></li>
+                                            <li>
+                                                <form method="POST" class="delete-action" action="{{ route('admin.{{$routes}}.destroy', ['{{$route}}' => $item->id]) }}">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+
+                                                    <button type="submit"  class="btn btn-default"><i class="fa fa-trash"></i></button>
+                                                </form>
+                                            </li>
                                         </ul>
                                     </td>
                                 </tr>
