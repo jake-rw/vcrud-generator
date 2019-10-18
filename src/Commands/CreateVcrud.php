@@ -42,7 +42,7 @@ class CreateVcrud extends Command
         parent::__construct();      
         $this->viewBlades = [
             'list',
-            'show'
+            'show',
             'edit',
             'create'
         ];
