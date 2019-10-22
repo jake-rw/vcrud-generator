@@ -39,7 +39,7 @@ class CreateVcrud extends Command
      */
     public function __construct()
     {
-        parent::__construct();      
+        parent::__construct();
         $this->viewBlades = [
             'list',
             'show',
@@ -56,11 +56,11 @@ class CreateVcrud extends Command
      */
     public function handle()
     {
-       
         $this->viewsDir = getcwd().'/resources/views/backend/' . $this->getModelDir();
+
         //Create model and migration
         $this->createModel();
-        
+
         //Create controller
         $this->createController();
 
@@ -72,7 +72,6 @@ class CreateVcrud extends Command
 
         //Create route
         $this->createRoute();
-
     }
 
     /**
@@ -97,7 +96,7 @@ class CreateVcrud extends Command
 
     protected function getModelDir()
     {
-        return strtolower($this->_getModel());        
+        return strtolower($this->_getModel());
     }
 
     /**
@@ -131,7 +130,7 @@ class CreateVcrud extends Command
     protected function createController()
     {
         $controller = $this->getController();
-        
+
         $this->call('make:controller', [
             'name' => $this->getController()."Controller",
             '--model' => $this->getModel(),
@@ -140,13 +139,7 @@ class CreateVcrud extends Command
 
     protected function createRequests()
     {
-        
-        $requests = array(
-            'Add',
-            'Edit'
-        );
-
-        foreach ($requests as $request) {
+        foreach (['Add', 'Edit'] as $request) {
              $this->call('make:request', [
                 'name' => 'Admin/' . $this->_getModel() . '/' . $request.$this->_getModel(),
             ]);
@@ -169,8 +162,8 @@ class CreateVcrud extends Command
 
     protected function createView($views)
     {
-        if( is_array($views) ) {
-            foreach ($views as $view) {                
+        if (is_array($views)) {
+            foreach ($views as $view) {
                 $this->createFile($view);
             }
         }
@@ -196,7 +189,7 @@ class CreateVcrud extends Command
             $file = 'blank';
         }
 
-        $content = '';       
+        $content = '';
 
         $template = file_get_contents(__DIR__."/../Templates/Backend/{$file}.php");
 
