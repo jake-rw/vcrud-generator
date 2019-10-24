@@ -9,10 +9,11 @@ class CreateVcrud extends Command
 {
     /**
      * The name and signature of the console command.
+     * @todo Consider adding some options for Model View Controller
      *
      * @var string
      */
-    protected $signature = 'make:vcrud {model}'; // Consider adding some options for Model View Controller
+    protected $signature = 'make:vcrud {model}';
 
 
     ## Model
@@ -30,8 +31,6 @@ class CreateVcrud extends Command
     /** @var array */
     protected $viewBlades;
 
-    //protected $model;
-
     /**
      * Create a new command instance.
      *
@@ -40,13 +39,8 @@ class CreateVcrud extends Command
     public function __construct()
     {
         parent::__construct();
-        $this->viewBlades = [
-            'list',
-            'show',
-            'edit',
-            'create'
-        ];
-        
+
+        $this->viewBlades = ['list', 'show', 'edit', 'create'];
     }
 
     /**
