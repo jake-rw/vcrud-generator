@@ -5,7 +5,12 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/jakerw/vcrud-generator.svg?style=flat-square)](https://scrutinizer-ci.com/g/jakerw/vcrud-generator)
 [![Total Downloads](https://img.shields.io/packagist/dt/jakerw/vcrud-generator.svg?style=flat-square)](https://packagist.org/packages/jakerw/vcrud-generator)
 
-The package is a Utility tool briging together a number of Laravels console commands such as make:model nake:controller and adding view creation so save the manual leg work.
+The package is a Utility tool briging together a number of Laravels console commands to so save the manual leg work such as:
+
+* make:model 
+* make:controller 
+* make:tests
+* and adding view creation 
 
 ## Installation
 
@@ -23,7 +28,7 @@ Running the below will work all sorts of magic. In the background it will be cre
 - Backend Controller
 - Backend Requests 
 - Backend views based on AdminLTE
-
+- Tests
 You simply need to pass the Model name as an argument.
 
 ``` php
