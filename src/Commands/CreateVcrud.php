@@ -66,6 +66,9 @@ class CreateVcrud extends Command
 
         //Create route
         $this->createRoute();
+
+        //Create test
+        $this->createTest();
     }
 
     /**
@@ -199,5 +202,12 @@ class CreateVcrud extends Command
         $name = $this->getModelDir();
         $controller = $this->getController()."Controller";
         $this->info("Create route with the following Route::resource('$name', '$controller');" );
+    }
+
+     protected function createTest()
+    {
+        $this->call('make:test', [
+            'name' => $this->_getModel(),
+        ]);
     }
 }
