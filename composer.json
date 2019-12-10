@@ -1,5 +1,5 @@
 {
-    "name": "jakerw/vcrud-generator",
+    "name": "jake-rw/vcrud-generator",
     "description": "View and CRUD generator",
     "keywords": [
         "jake-rw",
@@ -24,12 +24,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Jakerw\\VcrudGenerator\\": "src"
+            "JakeRw\\VcrudGenerator\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Jakerw\\VcrudGenerator\\Tests\\": "tests"
+            "JakeRw\\VcrudGenerator\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -43,10 +43,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Jakerw\\VcrudGenerator\\VcrudGeneratorServiceProvider"
+                "JakeRw\\VcrudGenerator\\VcrudGeneratorServiceProvider"
             ],
             "aliases": {
-                "VcrudGenerator": "Jakerw\\VcrudGenerator\\VcrudGeneratorFacade"
+                "VcrudGenerator": "JakeRw\\VcrudGenerator\\VcrudGeneratorFacade"
             }
         }
     }
