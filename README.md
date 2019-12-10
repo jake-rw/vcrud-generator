@@ -22,14 +22,15 @@ composer require jakerw/vcrud-generator
 
 ## Usage
 
-Running the below will work all sorts of magic. In the background it will be creating the following:
+Running the below will work all sorts of magic. In the background it will be creating the following by simply passing in a Model name as an argument:
+
 - Model
 - Migration 
 - Backend Controller
 - Backend Requests 
 - Backend views based on AdminLTE
 - Tests
-You simply need to pass the Model name as an argument.
+
 
 ``` php
 php artisan make:vrud Phone
