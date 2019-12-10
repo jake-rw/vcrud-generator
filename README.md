@@ -29,7 +29,7 @@ Running the below will work all sorts of magic. In the background it will be cre
 - Backend Controller
 - Backend Requests 
 - Backend views based on AdminLTE
-- Tests
+- Initial Tests
 
 
 ``` php
