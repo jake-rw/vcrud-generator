@@ -1,5 +1,5 @@
 <?php
-namespace Jakerw\VcrudGenerator\Helpers;
+namespace JakeRw\VcrudGenerator\Helpers;
 
 
 class Helper

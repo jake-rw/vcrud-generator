@@ -1,11 +1,11 @@
 <?php
 
-namespace Jakerw\VcrudGenerator;
+namespace JakeRw\VcrudGenerator;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Jakerw\VcrudGenerator\Skeleton\SkeletonClass
+ * @see \JakeRw\VcrudGenerator\Skeleton\SkeletonClass
  */
 class VcrudGeneratorFacade extends Facade
 {

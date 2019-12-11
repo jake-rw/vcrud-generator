@@ -1,6 +1,6 @@
 <?php
 
-namespace Jakerw\VcrudGenerator;
+namespace JakeRw\VcrudGenerator;
 
 class VcrudGenerator
 {

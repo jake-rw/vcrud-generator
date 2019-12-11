@@ -1,10 +1,10 @@
 <?php
 
-namespace Jakerw\VcrudGenerator;
+namespace JakeRw\VcrudGenerator;
 
 use Illuminate\Support\ServiceProvider;
-use Jakerw\VcrudGenerator\Commands\CreateVcrud;
-use Jakerw\VcrudGenerator\Helpers\Helper;
+use JakeRw\VcrudGenerator\Commands\CreateVcrud;
+use JakeRw\VcrudGenerator\Helpers\Helper;
 
 class VcrudGeneratorServiceProvider extends ServiceProvider
 {
