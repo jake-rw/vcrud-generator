@@ -5,12 +5,14 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/jake-rw/vcrud-generator.svg?style=flat-square)](https://scrutinizer-ci.com/g/jake-rw/vcrud-generator)
 [![Total Downloads](https://img.shields.io/packagist/dt/jake-rw/vcrud-generator.svg?style=flat-square)](https://packagist.org/packages/jake-rw/vcrud-generator)
 
-The package is a Utility tool briging together a number of Laravels console commands to so save the manual leg work such as:
+The package is a Utility tool briging together a number of Laravels console commands to so save the manual leg work. The following laravel commands have been bolted un:
 
-* make:model 
-* make:controller 
-* make:tests
-* and adding view creation 
+```bash
+php artisan make:model 
+php artisan make:controller 
+php artisan make:tests
+php artisan and adding view creation 
+```
 
 ## Installation
 
